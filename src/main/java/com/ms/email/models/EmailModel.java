@@ -5,6 +5,7 @@ import com.ms.email.enums.StatusEmail;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "TB_EMAIL")
@@ -14,7 +15,7 @@ public class EmailModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long emailId;
+    private UUID emailId;
     private String ownerRef;
     private String emailFrom;
     private String emailTo;
@@ -25,11 +26,11 @@ public class EmailModel implements Serializable {
     private StatusEmail statusEmail;
 
 
-    public Long getEmailId() {
+    public UUID getEmailId() {
         return emailId;
     }
 
-    public void setEmailId(Long emailId) {
+    public void setEmailId(UUID emailId) {
         this.emailId = emailId;
     }
 
